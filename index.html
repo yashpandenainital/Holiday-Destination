@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Nainital Holiday Destinations</title>
+</head>
+
+<body>
+  <div id="hero">
+    <div class="navbar">
+      <img src="https://scontent.fdel1-4.fna.fbcdn.net/v/t39.30808-6/415983342_876291314499026_5468670432231751385_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=7mKjCnQJ8V8AX9flgaS&_nc_ht=scontent.fdel1-4.fna&oh=00_AfBfLmjPQ6v6Zb1G5tHqjE7Tt1aGLRtlc1RmPGg8j5R5qQ&oe=65EA1B15" class="logo">
+      <div class="user">
+        <button type="button">Explore</button>
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/corporate-user-icon.png">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="info">
+        <h1>DISCOVER</h1>
+        <p>Nainital is a Himalayan resort town in the Kumaon region of India’s Uttarakhand state, at an elevation of roughly 2,000m. Formerly a British hill station, it’s set around Nainital Lake, a popular boating site with Naina Devi Hindu Temple on its north shore. A cable car runs to Snow View observation point (at 2,270m), with vistas over the town and mountains including Nanda Devi, Uttarakhand’s highest peak.
+             <br> Nainital, the charming Himalayan lake town, is a picture-postcard perfect hill-station and one of the most popular in Northern India. Commonly known as the ‘Lake District’, Nainital is nestled high up in the Kumaon Himalayas at an altitude of around 2,000 m above sea level.
+        </p>
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+
+    <div class="slider">
+      <img src="https://www.svgrepo.com/show/6490/left-arrow-variant-key-on-keyboard.svg" id="prev">
+      <div class="preview">
+        <img src="https://media2.thrillophilia.com/images/photos/000/229/785/original/1587037275_A_view_of_Nainital_lake_with_the_morning_mist.jpg?width=975&height=600" class="active thumbnail">
+        <img src="https://imgmediagumlet.lbb.in/media/2018/04/5ac11bb7d4454d0f101dbdbf_1522604983013.jpg?fm=webp&w=750&h=500&dpr=2" class="thumbnail">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/fe/a8/04/view-from-snow-point.jpg?w=1800&h=-1&s=1" class="thumbnail">
+        <img src="https://3.bp.blogspot.com/-9xxi4ghQZeA/TrOrfBtAOSI/AAAAAAAAM1c/Uxd_hrj3dxs/s1600/sunsetinnainital.jpg" class="thumbnail">
+        <img src="https://www.holidify.com/images/cmsuploads/compressed/671_20190514145903.jpg" class="thumbnail">
+      </div>
+      <img src="https://www.shareicon.net/data/128x128/2015/09/20/643513_keyboard_512x512.png" id="next">
+    </div>
+  </div>
+  <script>
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var thumbnail = document.getElementsByClassName('thumbnail');
+    var hero = document.getElementById('hero');
+
+    var backgroundImg = new Array(
+      'https://media2.thrillophilia.com/images/photos/000/229/785/original/1587037275_A_view_of_Nainital_lake_with_the_morning_mist.jpg?width=975&height=600',
+      'https://imgmediagumlet.lbb.in/media/2018/04/5ac11bb7d4454d0f101dbdbf_1522604983013.jpg?fm=webp&w=750&h=500&dpr=2',
+      'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/fe/a8/04/view-from-snow-point.jpg?w=1800&h=-1&s=1',
+      'https://3.bp.blogspot.com/-9xxi4ghQZeA/TrOrfBtAOSI/AAAAAAAAM1c/Uxd_hrj3dxs/s1600/sunsetinnainital.jpg',
+      'https://www.holidify.com/images/cmsuploads/compressed/671_20190514145903.jpg',
+    );
+    let i = 0;
+    next.onclick = function () {
+      if (i < 4) {
+        hero.style.backgroundImage = 'url("' + backgroundImg[i + 1] + '")';
+        thumbnail[i + 1].classList.add('active');
+        thumbnail[i].classList.remove('active');
+        i++;
+      }
+    }
+    prev.onclick = function () {
+      if (i > 0) {
+        hero.style.backgroundImage = 'url("' + backgroundImg[i - 1] + '")';
+        thumbnail[i - 1].classList.add('active');
+        thumbnail[i].classList.remove('active');
+        i--;
+      }
+    }
+  </script>
+</body>
+
+</html>
